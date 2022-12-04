@@ -1,0 +1,10 @@
+struct media*Choose_Song(struct media* HEAD, struct media* P);
+void Pause_Play(struct media* p);
+void Close_Play(struct media* p);
+int Print_List(struct media* head);
+struct media* CreatHead();
+void SongPlaying(struct media* p);
+void VolUp(struct media* p);
+void VolDown(struct media* p);
+struct media* Next_Play(struct media* p);
+struct media* Last_Play(struct media* head, struct media* p);
