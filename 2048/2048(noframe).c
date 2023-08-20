@@ -110,8 +110,7 @@ boolean JudgeZero()
 	}
  	return FALSE;
  }
- 
-// �ж��Ƿ�����ͬ������Ԫ�� 
+
 boolean JudgeEnd()
  {
  	for(int i=0;i<4;i++)
@@ -146,7 +145,6 @@ boolean JudgeEnd()
 	return FALSE;
  }
  
-//��ӡ��Ϸ����
 void Print()
 { 
 	printf("\n");
@@ -201,7 +199,6 @@ void Print()
 	}
 } 
 
-//���������ƶ�
 void up()
 {
 	int color [4][4];  

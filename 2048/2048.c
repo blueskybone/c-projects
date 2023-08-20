@@ -6,10 +6,10 @@
 
 #define MAX_NUMBER 2048
 
-int map[4][4]; // 地图
-int score;	   // 分數
+int map[4][4]; 
+int score;
 
-void Sdir();   // 生成随机数
+void Sdir();   // generate random number 2 or 4
 void Print(); 
 void Printcover();
 void Printinfo();
@@ -24,7 +24,6 @@ boolean JudgeWin();
 
 boolean move;
 
-// 键盘交互
 void up();
 void down();
 void left();
@@ -51,7 +50,7 @@ boolean GameStart()
 			if (input != 'W' && input != 'S' && input != 'A' && input != 'D' && input != 'w' && input != 's' && input != 'a' && input != 'd')
 			{
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_GREEN);
-				printf("\t\t\t使用WSAD移动\n");
+				printf("\t\t\t使用WSAD控制方向\n");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED |
 																			 FOREGROUND_GREEN | FOREGROUND_BLUE);
 			}
@@ -98,7 +97,7 @@ boolean GameStart()
 			{
 				printf("\n\n\t YOU WIN");
 				Sleep(1000);
-				printf("\n\n\t 是否重新开始  Y/N ");
+				printf("\n\n\t 再来一局  Y/N ");
 				char input;
 				while (input = _getch())
 				{
@@ -112,7 +111,7 @@ boolean GameStart()
 			{
 				printf("\n\n\t YOU LOSE");
 				Sleep(1000);
-				printf("\n\n\t 是否重新开始  Y/N ");
+				printf("\n\n\t 再来一局  Y/N ");
 				char input;
 				while (input = _getch())
 				{
@@ -168,7 +167,6 @@ int main()
 	}
 }
 
-// 生成数字
 void Sdir()
 {
 	if (JudgeZero() == TRUE)
@@ -184,7 +182,6 @@ void Sdir()
 			map[x1][y1] = 2;
 	}
 }
-// 封面
 void Printcover()
 {
 	printf("\n\n\n\n\n");
@@ -193,9 +190,9 @@ void Printcover()
 	printf("\t\t / __/ / // //_  _// _ | \n");
 	printf("\t\t/____/ \\___/  /_/  \\___/ \n\n\n\n");
 	printf("\t\t 1 开始游戏       2 游戏规则\n\n");
-	printf("\t\t 3 程序说明       4 退出游戏\n\n");
+	printf("\t\t 3 程序说明       4 退出程序\n\n");
 }
-// 检查是否还有空格
+// 判断场上是否有空位
 boolean JudgeZero()
 {
 	for (int i = 0; i < 4; i++)
@@ -227,6 +224,7 @@ boolean JudgeEnd()
 		}
 	return FALSE;
 }
+
 boolean JudgeWin()
 {
 	for (int i = 0; i < 4; i++)
@@ -252,12 +250,12 @@ void GameInitial()
 	Sdir();
 	Sdir();
 }
-// 打印游戏界面
+// 
 void Print()
 {
 	printf("\n\n\n\n");
 	printf("\t╔═══════╦═══════╦═══════╦═══════╗\n");
-	printf("\t║       ║       ║       ║       ║\n");
+    printf("\t║       ║       ║       ║       ║\n");
 	printf("\t");
 	for (int j = 0; j < 4; j++)
 	{
@@ -280,9 +278,9 @@ void Print()
 			printf(" ");
 	}
 	printf("║\n");
-	printf("\t║       ║       ║       ║       ║\n");
-	printf("\t╠═══════╬═══════╬═══════╬═══════╣\n");
-	printf("\t║       ║       ║       ║       ║\n");
+    printf("\t║       ║       ║       ║       ║\n");
+    printf("\t╠═══════╬═══════╬═══════╬═══════╣\n");
+    printf("\t║       ║       ║       ║       ║\n");
 	printf("\t");
 	for (int j = 0; j < 4; j++)
 	{
@@ -305,10 +303,9 @@ void Print()
 			printf(" ");
 	}
 	printf("║\n");
-
-	printf("\t║       ║       ║       ║       ║\n");
-	printf("\t╠═══════╬═══════╬═══════╬═══════╣\n");
-	printf("\t║       ║       ║       ║       ║\n");
+    printf("\t║       ║       ║       ║       ║\n");
+    printf("\t╠═══════╬═══════╬═══════╬═══════╣\n");
+    printf("\t║       ║       ║       ║       ║\n");
 	printf("\t");
 	for (int j = 0; j < 4; j++)
 	{
@@ -331,9 +328,9 @@ void Print()
 			printf(" ");
 	}
 	printf("║\n");
-	printf("\t║       ║       ║       ║       ║\n");
-	printf("\t╠═══════╬═══════╬═══════╬═══════╣\n");
-	printf("\t║       ║       ║       ║       ║\n");
+    printf("\t║       ║       ║       ║       ║\n");
+    printf("\t╠═══════╬═══════╬═══════╬═══════╣\n");
+    printf("\t║       ║       ║       ║       ║\n");
 	printf("\t");
 	for (int j = 0; j < 4; j++)
 	{
@@ -356,26 +353,27 @@ void Print()
 		for (int io = 0; io < 3 - sec; io++)
 			printf(" ");
 	}
-	printf("║\n");
-
-	printf("\t║       ║       ║       ║       ║\n");
-	printf("\t╚═══════╩═══════╩═══════╩═══════╝\n");
+    printf("║\n");
+   
+    printf("\t║       ║       ║       ║       ║\n");
+    printf("\t╚═══════╩═══════╩═══════╩═══════╝\n");
 	printf("\n\n\t SCORE  %d\n", score);
 }
 void Printinfo()
 {
-	printf("\n\n\n\n\t 作者初学作品，代码结构较混乱，酌情参考。 \n");
-	printf("\n\n\n\n\t 创建时间： 2019-7-23 \n");
-	printf("\t 最后更新： 2023-8-15\n");
+	printf("\n\n\n\n\t 源代码: github.com/blueskybone/2048 \n");
+	printf("\t 这个程序是作者的初学作品，代码结构较混乱，请酌情参考 \n");
+	printf("\n\n\n\n\t 创建时间 2019-7-23 \n");
+	printf("\t 最后更新 2023-8-15\n");
 }
 void Printuse()
 {
-	printf("\n\n\n\n\t 1.使用键盘wsad控制上下左右。 \n");
-	printf("\n\n\n\n\t 2.相同数字相撞时数字相加。 \n");
-	printf("\n\n\n\n\t 3.每次滑动时，在空白随机生成新的数字2或4。 \n");
-	printf("\n\n\n\n\t 4.出现数字2048则胜利。无法移动时判输。 \n");
+	printf("\n\n\n\n\t 1.使用WSAD控制上下左右。 \n");
+	printf("\n\n\n\n\t 2.相同数字相撞时数字会相加。 \n");
+	printf("\n\n\n\n\t 3.每次滑动时,空白处随机刷新一个2或4。 \n");
+	printf("\n\n\n\n\t 4.生成2048时胜利。界面无法运动时游戏结束。 \n");
 }
-// 上下左右逻辑
+
 void up()
 {
 	int color[4][4];
