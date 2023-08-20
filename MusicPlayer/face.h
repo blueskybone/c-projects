@@ -72,7 +72,7 @@ void info()
 {
 	system("CLS");
 	printf("\n\n");
-	printf("\t\t    源码地址：github.com/blueskybone/c-projects/MusicPlayer\n");
-	printf("\t\t    这是作者的初学作品，代码结构较混乱，请酌情参考。\n\n");
+	printf("\t\t    源代码：https://github.com/blueskybone/c-projects/tree/master/MusicPlayer\n");
+	printf("\t\t    作者初学作品，代码结构较混乱，请酌情参考。\n\n");
 	system("pause");
 }
